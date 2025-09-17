@@ -20,6 +20,7 @@ public class SumAverage {
         }
 
         System.out.println("The total number entered was: " + sum);
-        System.out.println("The average was: " + sum/count);
+        double avg = (double) sum/count;
+        System.out.println("The average was: " + avg);
     }
 }

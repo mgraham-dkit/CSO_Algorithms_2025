@@ -1,4 +1,4 @@
-package conversion.arrays;
+package a_conversion.arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;

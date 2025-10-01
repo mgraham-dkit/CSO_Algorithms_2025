@@ -42,6 +42,12 @@ public class ArrayUtils {
         return currentMax;
     }
 
+    private static void validatePosition(int [] nums, int pos){
+        if(pos < 0 || pos >= nums.length){
+            throw new IndexOutOfBoundsException("Position supplied is outside boundary of array");
+        }
+    }
+
     private static void lengthValidateArray(int[] nums) {
         if(nums.length == 0){
             throw new IllegalArgumentException("Cannot find maximum of empty array");
@@ -55,9 +61,7 @@ public class ArrayUtils {
     }
 
     public static int deleteAtPos(int [] nums, int pos){
-        if(pos < 0 || pos >= nums.length){
-            throw new IndexOutOfBoundsException("Position supplied is outside boundary of array");
-        }
+        validatePosition(nums, pos);
 
         int deleted = nums[pos];
 

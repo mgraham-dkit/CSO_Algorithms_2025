@@ -53,4 +53,20 @@ public class ArrayUtils {
             throw new IllegalArgumentException("Cannot find maximum of null array");
         }
     }
+
+    public static int deleteAtPos(int [] nums, int pos){
+        if(pos < 0 || pos >= nums.length){
+            throw new IndexOutOfBoundsException("Position supplied is outside boundary of array");
+        }
+
+        int deleted = nums[pos];
+
+        for(int i = pos; i < nums.length-1; i++){
+            nums[i] = nums[i+1];
+        }
+
+        nums[nums.length-1] = 0;
+
+        return deleted;
+    }
 }

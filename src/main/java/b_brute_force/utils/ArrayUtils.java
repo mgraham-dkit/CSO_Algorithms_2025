@@ -73,4 +73,48 @@ public class ArrayUtils {
 
         return deleted;
     }
+
+    public static int [] resize(int [] data, int numSlots){
+        int [] resized = new int[numSlots];
+
+        int numElements = data.length;
+        if(data.length > numSlots){
+            numElements = numSlots;
+        }
+
+        for (int i = 0; i < numElements; i++) {
+            resized[i] = data[i];
+        }
+
+        return resized;
+    }
+
+    public static int [] deduplicate(int [] data){
+        // VALIDATION
+        nullValidateArray(data);
+
+        // SETUP
+        int [] deduplicated = new int[0];
+
+        // LOGIC
+        for(int num: data){
+            boolean found = contains(deduplicated, num);
+            if(!found){
+                deduplicated = resize(deduplicated, deduplicated.length + 1);
+                deduplicated[deduplicated.length-1] = num;
+            }
+        }
+        return deduplicated;
+    }
+
+    public static boolean contains(int[] deduplicated, int num) {
+        boolean contains = false;
+        for (int i = 0; i < deduplicated.length; i++) {
+            if (num == deduplicated[i]) {
+                contains = true;
+                break;
+            }
+        }
+        return contains;
+    }
 }

@@ -1,0 +1,23 @@
+INPUTS : Array to be deduplicated
+OUTPUT : Deduplicated array (separate from the original array)
+
+// VALIDATION:
+If array does not exist:
+    Throw error to indicate that illegal argument was provided
+
+// SETUP:
+Create array to hold deduplicated data (deduplicated)
+// If using blank deletion, array starts at size of original
+// If using array growth, array starts at size 0
+
+// LOGIC:
+for each element in original array:
+    if current element is not in new array:
+        // If using array growth, grow array by 1 first
+        Add to new array
+
+
+// If using blank deletion, resize to fit deduplicated data
+
+// OUTPUT:
+return deduplicated array

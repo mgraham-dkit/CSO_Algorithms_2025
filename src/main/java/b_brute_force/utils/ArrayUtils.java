@@ -28,12 +28,8 @@ public class ArrayUtils {
     }
 
     public static int getMax(int [] nums){
-        if(nums == null){
-            throw new IllegalArgumentException("Cannot find maximum of null array");
-        }
-        if(nums.length == 0){
-            throw new IllegalArgumentException("Cannot find maximum of empty array");
-        }
+        nullValidateArray(nums);
+        lengthValidateArray(nums);
 
         int currentMax = nums[0];
 
@@ -44,5 +40,17 @@ public class ArrayUtils {
         }
 
         return currentMax;
+    }
+
+    private static void lengthValidateArray(int[] nums) {
+        if(nums.length == 0){
+            throw new IllegalArgumentException("Cannot find maximum of empty array");
+        }
+    }
+
+    private static void nullValidateArray(int[] nums) {
+        if(nums == null){
+            throw new IllegalArgumentException("Cannot find maximum of null array");
+        }
     }
 }

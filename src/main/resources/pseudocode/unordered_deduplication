@@ -12,9 +12,9 @@ Create array to hold deduplicated data (deduplicated)
 
 // LOGIC:
 for each element in original array:
-    if current element is not in new array:
+    if current element is not in deduplicated:
         // If using array growth, grow array by 1 first
-        Add to new array
+        Add to deduplicated at position
 
 
 // If using blank deletion, resize to fit deduplicated data

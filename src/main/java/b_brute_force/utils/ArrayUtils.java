@@ -117,4 +117,55 @@ public class ArrayUtils {
         }
         return contains;
     }
+
+    public int [] merge(int [] data1, int [] data2){
+        nullValidateArray(data1);
+        nullValidateArray(data2);
+        // Create a new array to hold combined information
+        int [] merged = new int[data1.length + data2.length];
+        // Track how many elements have been added to merged data
+        int count = 0;
+
+        // Copy each element from first array into merged array
+        for (int i = 0; i < data1.length; i++) {
+            merged[i] = data1[i];
+            count++;
+        }
+
+        // Copy each element from second array into merged array
+        // starting at count index to offset elements we already added
+        for (int i = 0; i < data2.length; i++) {
+            merged[count] = data2[i];
+            count++;
+        }
+
+        return merged;
+    }
+
+    public int[] orderedMerge(int [] data1, int [] data2){
+        nullValidateArray(data1);
+        nullValidateArray(data2);
+
+        int [] merged = new int[data1.length + data2.length];
+
+        int tracker1 = 0;
+        int tracker2 = 0;
+
+        for (int i = 0; i < merged.length; i++) {
+            // If tracker 1 is outside the data1 array
+            //      Read from data2
+            //      Increase tracker 2
+            // else if tracker 2 is outside the data2 array
+            //      Read from data1
+            //      Increase tracker 1
+            // else if data2[tracker2] is less than data1[tracker]
+            //      Read from data2
+            //      Increase tracker 2
+            // else
+            //      Read from data1
+            //      Increase tracker 1
+        }
+
+        return merged;
+    }
 }

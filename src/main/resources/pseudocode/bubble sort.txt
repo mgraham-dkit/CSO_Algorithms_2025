@@ -1,0 +1,6 @@
+for each slot in data (i) as far as data.length-1:
+    for each slot in data (j) as far as data.length - 1 - i:
+        if data[j] is greater than data[j+1]:
+            Store data[j] in variable (temp)
+            Set data[j] to data[j+1]
+            Set data[j+1] to temp

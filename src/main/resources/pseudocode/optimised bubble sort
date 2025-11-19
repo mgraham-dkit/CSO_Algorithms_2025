@@ -1,4 +1,4 @@
-Action: Sorts an array of elements in ascending order
+Action: Sorts an array of elements in ascending order using optimised bubble sort
 Input: Array of elements (data) to be sorted
 Output: Algorithm sorts array but no value is returned
 

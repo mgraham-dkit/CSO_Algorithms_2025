@@ -1,0 +1,17 @@
+Action: Sorts an array of elements in ascending order using selection sort
+Input: Array of elements (data) to be sorted
+Output: Algorithm sorts array but no value is returned
+
+if data is null:
+    Throw new Illegal Argument Exception (array to be sorted cannot be null)
+
+if data contains one element or less:
+    return nothing
+
+for each position in array (startSlot) from 0 to length - 1:
+    Create a variable (minIndex) to store index of current minimum value and set to startSlot
+    for each position in array (j) from startSlot to length:
+        If data[j] is less than data[minIndex]:
+            Set minIndex to j
+
+    swap data[startSlot] with data[minIndex]

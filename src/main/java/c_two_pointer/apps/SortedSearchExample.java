@@ -1,6 +1,7 @@
 package c_two_pointer.apps;
 
 import c_two_pointer.utils.ArrayUtils;
+import c_two_pointer.utils.RecursiveUtils;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -22,7 +23,7 @@ public class SortedSearchExample {
         System.out.print("Array contents: " + ArrayUtils.toString(grades));
         System.out.println();
 
-        int index = ArrayUtils.search(grades, target);
+        int index = RecursiveUtils.binarySearch(grades, target);
         if(index == -1){
             System.out.println(target + " could not be found in the array.");
         }else{
@@ -36,7 +37,7 @@ public class SortedSearchExample {
         System.out.print("Array contents: " + ArrayUtils.toString(grades));
         System.out.println();
 
-        index = ArrayUtils.search(grades, target);
+        index = RecursiveUtils.binarySearch(grades, target);
         if(index == -1){
             System.out.println(target + " could not be found in the array.");
         }else{

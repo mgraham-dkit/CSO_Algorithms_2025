@@ -98,22 +98,28 @@ public class RecursiveUtils {
         return reverse(input.substring(1)) + input.charAt(0);
     }
 
-    public static int binarySearch(int [] data, int target){
-        if(data == null){
+    public static int binarySearch(int [] data, int target) {
+        if (data == null) {
             throw new IllegalArgumentException("Cannot search a null array");
         }
 
         int start = 0;
-        int end = data.length-1;
+        int end = data.length - 1;
 
-        while(start <= end){
+        return binarySearch(data, target, start, end);
+    }
+
+    private static int binarySearch(int [] data, int target, int start, int end){
+        if (start <= end){
             int mid = start + (end - start) / 2;
             if(data[mid] == target){
                 return mid;
             }else if(data[mid] > target){
                 end = mid - 1;
+                return binarySearch(data, target, start, end);
             }else{
                 start = mid + 1;
+                return binarySearch(data, target, start, end);
             }
         }
         return -1;
